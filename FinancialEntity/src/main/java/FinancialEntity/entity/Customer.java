@@ -9,6 +9,7 @@ public class Customer {
     private String numberId;
     private String name;
     private String lastName;
+    private String email;
     private LocalDate bornDate;
     private LocalDate createDate;
     private LocalDate editDate;
@@ -48,6 +49,13 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    public String getEmail(){
+        return email;
+    }
+    public void setEmail(String email){
+        this.email = email;
+    }
+
     public LocalDate getBornDate(){
         return bornDate;
     }
@@ -65,7 +73,7 @@ public class Customer {
     public LocalDate getEditDate(){
         return editDate;
     }
-    public void setLocalDate(LocalDate editDate){
+    public void setEditDate(LocalDate editDate){
         this.editDate = editDate;
     }
 
