@@ -4,8 +4,6 @@ import FinancialEntity.entity.Customer;
 
 public interface CustomerRepository {
 
-    public String findById(String id);
-
     public Customer createCustomer(Customer customer);
      //siendo menor de edad no se podra crear
      // fecha de creacion calculada automaticamente

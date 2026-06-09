@@ -1,6 +1,7 @@
 package FinancialEntity.service;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.UUID;
 
 import FinancialEntity.entity.Customer;
@@ -10,19 +11,15 @@ public class CustomerService implements CustomerRepository{
 
     private CustomerRepository customerRepository = new CustomerService();
 
-    public String findById(String id){
-        /*if (id <= 18){
-
-        }*/
-
-        //menor que 18, imprimir= menor de edad el usuario no se puede crear
-        //mayor que 18, enviar el id a createCustomer
-        //es necesario tener en cuenta la fehca de nacimiento porque aqui se valida
-
-        return id;
-    }
-
     public Customer createCustomer(Customer customer){
+
+        LocalDate today = LocalDate.now();
+        int age = Period.between(customer.getBornDate(), today).getYears();
+
+        if(age < 18){
+            System.out.println("Usuario menor de edad no puede ser registrado");
+            return null;
+        }
 
         customer.setId(UUID.randomUUID().toString());
         customer.setCreateDate(LocalDate.now());
