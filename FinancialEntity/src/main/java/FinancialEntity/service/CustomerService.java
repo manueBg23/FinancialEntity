@@ -2,6 +2,8 @@ package FinancialEntity.service;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 import FinancialEntity.entity.Customer;
@@ -9,7 +11,13 @@ import FinancialEntity.repository.CustomerRepository;
 
 public class CustomerService implements CustomerRepository{
 
+    private Map<String, Customer> storage = new HashMap<>();
+
     private CustomerRepository customerRepository = new CustomerService();
+
+    public Customer findById(String id){
+        return storage.get(id);
+    }
 
     public Customer createCustomer(Customer customer){
 
@@ -23,7 +31,6 @@ public class CustomerService implements CustomerRepository{
 
         customer.setId(UUID.randomUUID().toString());
         customer.setCreateDate(LocalDate.now());
-        customerRepository.upDateCustomer(customer);
 
         //aqui se calculara la fecha de creacion
 
@@ -31,6 +38,17 @@ public class CustomerService implements CustomerRepository{
     }
 
     public Customer upDateCustomer(Customer customer){
+
+        Customer existing = customerRepository.findById(customer.getId());
+
+        if (existing == null){
+            throw new IllegalArgumentException("El cliente no existe");
+        }
+
+        existing.setTypeId(customer.getTypeId());
+        existing.setName(customer.getName());
+        existing.setLastName(customer.getLastName());
+        existing.setEmail(customer.getEmail());
 
         //se modificara y se guardara con fecha
         return customer;

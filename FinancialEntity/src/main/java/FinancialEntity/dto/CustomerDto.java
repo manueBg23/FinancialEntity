@@ -13,7 +13,7 @@ public class CustomerDto {
         model.setTypeId(entity.getTypeId());
         model.setNumberId(entity.getNumberId());
         model.setName(entity.getName());
-        model.setLastname(entity.getLastName());
+        model.setLastName(entity.getLastName());
         model.setEmail(entity.getEmail());
         model.setBornDate(entity.getBornDate());
         model.setCreateDate(entity.getCreateDate());
