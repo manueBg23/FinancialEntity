@@ -32,8 +32,6 @@ public class CustomerService implements CustomerRepository{
         customer.setId(UUID.randomUUID().toString());
         customer.setCreateDate(LocalDate.now());
 
-        //aqui se calculara la fecha de creacion
-
         return customer;
     }
 
@@ -50,12 +48,10 @@ public class CustomerService implements CustomerRepository{
         existing.setLastName(customer.getLastName());
         existing.setEmail(customer.getEmail());
 
-        //se modificara y se guardara con fecha
         return customer;
     }
 
     public Customer deleteCustomer(Customer customer){
-        //se valida si tiene productos, por ahora dejar
         return customer;
     }
 
