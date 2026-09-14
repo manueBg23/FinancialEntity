@@ -1,40 +1,80 @@
 package FinancialEntity.dto;
 
-import FinancialEntity.entity.Account;
-import FinancialEntity.entity.AccountEntity;
+import java.time.LocalDate;
 
 public class AccountDto {
 
-    public Account toAccountM(AccountEntity ayNose){
+    private String id;
+    private Boolean typeAccount;
+    private String numberAccount;
+    private String stateAccount;
+    private Integer balance;
+    private Boolean gmf;
+    private LocalDate createDate;
+    private LocalDate editDate;
+    private String idUserAccount;
 
-        Account cuenta = new Account();
-
-        cuenta.setId(ayNose.getId());
-        cuenta.setTypeAccount(ayNose.getTypeAccount());
-        cuenta.setStateAccount(ayNose.getStateAccount());
-        cuenta.setBalance(ayNose.getBalance());
-        cuenta.setGmf(ayNose.getGmf());
-        cuenta.setCreateDate(ayNose.getCreateDate());
-        cuenta.setEditDate(ayNose.getEditDate());
-        cuenta.setIdUserAccount(ayNose.getIdUserAccount());
-
-        return cuenta;
+    public String getId(){
+        return id;
+    }
+    public void setId(String id){
+        this.id = id;
     }
 
-    public AccountEntity toAcountE(Account modelo){
-        
-        AccountEntity salida = new AccountEntity();
-
-        salida.setId(modelo.getId());
-        salida.setTypeAccount(modelo.getTypeAccount());
-        salida.setStateAccount(modelo.getStateAccount());
-        salida.setBalance(modelo.getBalance());
-        salida.setGmf(modelo.getGmf());
-        salida.setCreateDate(modelo.getCreateDate());
-        salida.setEditDate(modelo.getEditDate());
-        salida.setIdUserAccount(modelo.getIdUserAccount());
-
-        return salida;
+    public Boolean getTypeAccount(){
+        return typeAccount;
     }
-    
+    public void setTypeAccount(Boolean typeAccount){
+        this.typeAccount = typeAccount;
+    }
+
+    public String getNumberAccount(){
+        return numberAccount;
+    }
+    public void setNumberAccount(String numberAccount){
+        this.numberAccount = numberAccount;
+    }
+
+    public String getStateAccount(){
+        return stateAccount;
+    }
+    public void setStateAccount(String stateAccount){
+        this.stateAccount = stateAccount;
+    }
+
+    public Integer getBalance(){
+        return balance;
+    }
+    public void setBalance(Integer balance){
+        this.balance = balance;
+    }
+
+    public Boolean getGmf(){
+        return gmf;
+    }
+    public void setGmf(Boolean gmf){
+        this.gmf = gmf;
+    }
+
+    public LocalDate getCreateDate(){
+        return createDate;
+    }
+    public void setCreateDate(LocalDate createDate){
+        this.createDate = createDate;
+    }
+
+    public LocalDate getEditDate(){
+        return editDate;
+    }
+    public void setEditDate(LocalDate editDate){
+        this.editDate = editDate;
+    }
+
+    public String getIdUserAccount(){
+        return idUserAccount;
+    }
+    public void setIdUserAccount(String idUserAccount){
+        this.idUserAccount = idUserAccount;
+    }
+
 }

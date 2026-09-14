@@ -1,16 +1,9 @@
 package FinancialEntity.repository;
 
-import FinancialEntity.entity.Customer;
+import org.springframework.data.repository.ListCrudRepository;
+import org.springframework.stereotype.Repository;
 
-public interface CustomerRepository {
+import FinancialEntity.entity.CustomerEntity;
 
-    public Customer findById(String id);
-
-    public Customer createCustomer(Customer customer);
-
-    public Customer upDateCustomer(Customer customer);
-
-    public Customer deleteCustomer(Customer customer);
-  
-
-}
+@Repository 
+public interface CustomerRepository extends ListCrudRepository<CustomerEntity, String>{}

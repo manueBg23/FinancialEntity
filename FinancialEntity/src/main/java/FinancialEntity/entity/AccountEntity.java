@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,6 +15,7 @@ public class AccountEntity {
 
     @Id
     @Column (nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @Column(name="type_account")
@@ -101,18 +104,3 @@ public class AccountEntity {
     }
 
 }
-
-/* 
-• La cuenta de ahorros no puede tener un saldo menor a $0 (cero).
-• Las cuentas corrientes y de ahorros se pueden activar o inactivar en cualquier momento. •
-El número de las cuentas corrientes y de ahorros deben ser únicos y generarse
-automáticamente, la extensión del número de cuenta debe ser de 10 dígitos numéricos. El
-número de las cuentas ahorro debe iniciar en “53” y el número de las cuentas corriente debe
-iniciar en “33”.
-• Al crear una cuenta de ahorro esta debe establecerse como activa de forma
-predeterminada. • Solo se podrán cancelar las cuentas que tengan un saldo igual a
-$0.
-• La fecha de creación de cada producto debe ser calculada automáticamente al registrar
-el producto. • El saldo de la cuenta deberá actualizarse al realizar cualquier transacción
-exitosa.
- */

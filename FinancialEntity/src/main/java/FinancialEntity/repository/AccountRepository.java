@@ -1,15 +1,9 @@
 package FinancialEntity.repository;
 
-import FinancialEntity.entity.Account;
+import org.springframework.stereotype.Repository;
 
-public interface AccountRepository {
+import FinancialEntity.entity.AccountEntity;
+import org.springframework.data.repository.ListCrudRepository;
 
-    public Account findById(String id);
-
-    public Account createAccount(Account account);
-
-    public Account upDateAccount(Account account);
-
-    public Account deleteAccount(Account account);
-    
-}
+@Repository 
+public interface AccountRepository extends ListCrudRepository<AccountEntity, String> {}

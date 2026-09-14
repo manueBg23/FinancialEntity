@@ -1,43 +1,80 @@
 package FinancialEntity.dto;
 
-import FinancialEntity.entity.Customer;
-import FinancialEntity.entity.CustomerEntity;
+import java.time.LocalDate;
 
 public class CustomerDto {
 
-    public Customer toCustomerM(CustomerEntity entity){
+    private String id;
+    private String typeId;
+    private String numberId;
+    private String name;
+    private String lastName;
+    private String email;
+    private LocalDate bornDate;
+    private LocalDate createDate;
+    private LocalDate editDate;
 
-        Customer model = new Customer();
-
-        model.setId(entity.getId());
-        model.setTypeId(entity.getTypeId());
-        model.setNumberId(entity.getNumberId());
-        model.setName(entity.getName());
-        model.setLastName(entity.getLastName());
-        model.setEmail(entity.getEmail());
-        model.setBornDate(entity.getBornDate());
-        model.setCreateDate(entity.getCreateDate());
-        model.setEditDate(entity.getEditDate());
-
-        return model;
+    public String getId(){
+        return id;
+    }
+    public void setId(String id){
+        this.id = id;
     }
 
-    public CustomerEntity toCustomerE(Customer model){
+    public String getTypeId(){
+        return typeId;
+    }
+    public void setTypeId(String typeId){
+        this.typeId = typeId;
+    }
 
-        CustomerEntity entity = new CustomerEntity();
+    public String getNumberId(){
+        return numberId;
+    }
+    public void setNumberId(String numberId){
+        this.numberId = numberId;
+    }
 
-        entity.setId(model.getId());
-        entity.setTypeId(model.getTypeId());
-        entity.setNumberId(model.getNumberId());
-        entity.setName(model.getName());
-        entity.setLastName(model.getLastName());
-        entity.setEmail(model.getEmail());
-        entity.setBornDate(model.getBornDate());
-        entity.setCreateDate(model.getCreateDate());
-        entity.setEditDate(model.getEditDate());
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
 
-        return entity;
+    public String getLastName(){
+        return lastName;
+    }
+    public void setLastName(String lastName){
+        this.lastName = lastName;
+    }
 
+    public String getEmail(){
+        return email;
+    }
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public LocalDate getBornDate(){
+        return bornDate;
+    }
+    public void setBornDate(LocalDate bornDate){
+        this.bornDate = bornDate;
+    }
+    
+    public LocalDate getCreateDate(){
+        return createDate;
+    }
+    public void setCreateDate(LocalDate createDate){
+        this.createDate = createDate;
+    }
+
+    public LocalDate getEditDate(){
+        return editDate;
+    }
+    public void setEditDate(LocalDate editDate){
+        this.editDate = editDate;
     }
 
 }

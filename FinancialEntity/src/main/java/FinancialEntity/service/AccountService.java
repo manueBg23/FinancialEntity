@@ -1,44 +1,35 @@
 package FinancialEntity.service;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
-import FinancialEntity.entity.Account;
+import FinancialEntity.entity.AccountEntity;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import FinancialEntity.Mapper.AccountMapper;
+import FinancialEntity.dto.AccountDto;
 import FinancialEntity.repository.AccountRepository;
 
-public class AccountService implements AccountRepository{
+@Service 
+public class AccountService{
 
-    private Map<String, Account> storage = new HashMap<>();
+    private final AccountRepository accountRepository;
+    private final AccountMapper accountMapper;
 
-    private AccountRepository accountRepository = new AccountService();
-
-    public Account findById(String id){
-        return storage.get(id);
-    }
-
-    public Account createAccount(Account account){
-        return account;
-    }
-
-    public Account upDateAccount(Account account){
-
-        Account existing = accountRepository.findById(account.getId());
-
-        if (existing == null){
-            throw new IllegalArgumentException("El cliente no existe");
+    @Autowired
+    public AccountService(AccountRepository accountRepository, 
+        AccountMapper accountMapper){
+            this.accountRepository = accountRepository;
+            this.accountMapper = accountMapper;
         }
-
-        existing.setBalance(account.getBalance());
-        existing.setGmf(account.getGmf());
-        existing.setStateAccount(account.getStateAccount());
-        existing.setTypeAccount(account.getTypeAccount());
-
-        return account;
-    }
-
-    public Account deleteAccount(Account account){
-        return account;
-    }
-
     
+    public List<AccountDto> getAll(){
+        List<AccountEntity> accounts = accountRepository.findAll();
+        return accountMapper.ListAccounts(accounts);
+    }
+
+    public AccountDto get(String id){
+        AccountEntity entity = accountRepository.findById(id).orElse(null);
+        return entity != null ? accountMapper.toAccountM(entity) : null;
+    }
+
 }
