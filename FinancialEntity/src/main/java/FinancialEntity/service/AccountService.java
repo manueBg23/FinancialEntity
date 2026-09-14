@@ -32,4 +32,35 @@ public class AccountService{
         return entity != null ? accountMapper.toAccountM(entity) : null;
     }
 
+    public AccountDto getById(String id) {
+        AccountEntity entity = accountRepository.findById(id).orElse(null);
+        return entity != null ? accountMapper.toAccountM(entity) : null;
+    }
+
+    public AccountDto save(AccountDto accountDto){
+        AccountEntity entity = accountMapper.toAcountE(accountDto);
+        AccountEntity saved = accountRepository.save(entity);
+
+        return accountMapper.toAccountM(saved);
+    }
+
+    public AccountDto update(String id, AccountDto accountDto){
+
+        AccountEntity entityActual = accountRepository.findById(id).orElse(null);
+
+        if(entityActual == null){
+            return null;
+        }
+
+        accountDto.setId(id);
+        AccountEntity entityToUpdate = accountMapper.toAcountE(accountDto);
+        AccountEntity update = accountRepository.save(entityToUpdate);
+
+        return accountMapper.toAccountM(update);
+    }
+
+    public void delete(String id){
+        this.accountRepository.deleteById(id);
+    }
+
 }

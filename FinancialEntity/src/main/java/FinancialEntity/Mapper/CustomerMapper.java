@@ -1,5 +1,8 @@
 package FinancialEntity.Mapper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import FinancialEntity.dto.CustomerDto;
 import FinancialEntity.entity.CustomerEntity;
 
@@ -38,6 +41,19 @@ public class CustomerMapper {
 
         return entity;
 
+    }
+
+    public List<CustomerDto> listCustomers(List<CustomerEntity> entities){
+
+    List<CustomerDto> customers = new ArrayList<>();
+
+    for(CustomerEntity entity : entities){
+
+        customers.add(toCustomerM(entity));
+
+    }
+
+    return customers;
     }
 
 }
