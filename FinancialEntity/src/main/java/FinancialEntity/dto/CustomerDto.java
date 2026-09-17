@@ -1,6 +1,7 @@
 package FinancialEntity.dto;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class CustomerDto {
 
@@ -11,8 +12,8 @@ public class CustomerDto {
     private String lastName;
     private String email;
     private LocalDate bornDate;
-    private LocalDate createDate;
-    private LocalDate editDate;
+    private LocalDateTime createDate;
+    private LocalDateTime editDate;
 
     public String getId(){
         return id;
@@ -63,17 +64,17 @@ public class CustomerDto {
         this.bornDate = bornDate;
     }
     
-    public LocalDate getCreateDate(){
+    public LocalDateTime getCreateDate(){
         return createDate;
     }
-    public void setCreateDate(LocalDate createDate){
+    public void setCreateDate(LocalDateTime createDate){
         this.createDate = createDate;
     }
 
-    public LocalDate getEditDate(){
+    public LocalDateTime getEditDate(){
         return editDate;
     }
-    public void setEditDate(LocalDate editDate){
+    public void setEditDate(LocalDateTime editDate){
         this.editDate = editDate;
     }
 

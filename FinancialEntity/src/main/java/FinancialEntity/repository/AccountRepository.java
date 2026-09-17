@@ -6,4 +6,6 @@ import FinancialEntity.entity.AccountEntity;
 import org.springframework.data.repository.ListCrudRepository;
 
 @Repository 
-public interface AccountRepository extends ListCrudRepository<AccountEntity, String> {}
+public interface AccountRepository extends ListCrudRepository<AccountEntity, String> {
+    boolean existsByIdUserAccount(String idUserAccount);
+}

@@ -1,5 +1,6 @@
 package FinancialEntity.entity;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -34,10 +35,10 @@ public class CustomerEntity {
     private LocalDate bornDate;
 
     @Column(name = "create_date")
-    private LocalDate createDate;
+    private LocalDateTime createDate;
 
     @Column(name = "edit_date")
-    private LocalDate editDate;
+    private LocalDateTime editDate;
 
     public String getId(){
         return id;
@@ -50,7 +51,7 @@ public class CustomerEntity {
         return typeId;
     }
     public void setTypeId(String typeId){
-        this.typeId = id;
+        this.typeId = typeId;
     }
 
     public String getNumberId(){
@@ -88,17 +89,17 @@ public class CustomerEntity {
         this.bornDate = bornDate;
     }
 
-    public LocalDate getCreateDate(){
+    public LocalDateTime getCreateDate(){
         return createDate;
     }
-    public void setCreateDate(LocalDate createDate){
-        this.bornDate = createDate;
+    public void setCreateDate(LocalDateTime createDate){
+        this.createDate = createDate;
     }
 
-    public LocalDate getEditDate(){
+    public LocalDateTime getEditDate(){
         return editDate;
     }
-    public void setEditDate(LocalDate editDate){
+    public void setEditDate(LocalDateTime editDate){
         this.editDate = editDate;
     }
 

@@ -1,6 +1,6 @@
 package FinancialEntity.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,10 +32,10 @@ public class AccountEntity {
     private Boolean gmf;
 
     @Column(name="create_date")
-    private LocalDate createDate;
+    private LocalDateTime createDate;
 
     @Column(name="edit_date")
-    private LocalDate editDate;
+    private LocalDateTime editDate;
 
     @Column(name="id_user_account")
     private String idUserAccount;
@@ -82,17 +82,17 @@ public class AccountEntity {
         this.gmf = gmf;
     }
 
-    public LocalDate getCreateDate(){
+    public LocalDateTime getCreateDate(){
         return createDate;
     }
-    public void setCreateDate(LocalDate createDate){
+    public void setCreateDate(LocalDateTime createDate){
         this.createDate = createDate;
     }
 
-    public LocalDate getEditDate(){
+    public LocalDateTime getEditDate(){
         return editDate;
     }
-    public void setEditDate(LocalDate editDate){
+    public void setEditDate(LocalDateTime editDate){
         this.editDate = editDate;
     }
 

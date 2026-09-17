@@ -1,6 +1,6 @@
 package FinancialEntity.dto;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class AccountDto {
 
@@ -10,8 +10,8 @@ public class AccountDto {
     private String stateAccount;
     private Integer balance;
     private Boolean gmf;
-    private LocalDate createDate;
-    private LocalDate editDate;
+    private LocalDateTime createDate;
+    private LocalDateTime editDate;
     private String idUserAccount;
 
     public String getId(){
@@ -56,17 +56,17 @@ public class AccountDto {
         this.gmf = gmf;
     }
 
-    public LocalDate getCreateDate(){
+    public LocalDateTime getCreateDate(){
         return createDate;
     }
-    public void setCreateDate(LocalDate createDate){
+    public void setCreateDate(LocalDateTime createDate){
         this.createDate = createDate;
     }
 
-    public LocalDate getEditDate(){
+    public LocalDateTime getEditDate(){
         return editDate;
     }
-    public void setEditDate(LocalDate editDate){
+    public void setEditDate(LocalDateTime editDate){
         this.editDate = editDate;
     }
 
