@@ -3,9 +3,12 @@ package FinancialEntity.Mapper;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import FinancialEntity.dto.AccountDto;
 import FinancialEntity.entity.AccountEntity;
 
+@Component 
 public class AccountMapper {
 
     public AccountDto toAccountM(AccountEntity accountEntity){

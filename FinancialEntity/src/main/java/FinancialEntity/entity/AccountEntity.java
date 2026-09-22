@@ -15,7 +15,7 @@ public class AccountEntity {
 
     @Id
     @Column (nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
     @Column(name="type_account")
